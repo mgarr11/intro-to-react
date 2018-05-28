@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My second react app</title>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="app"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+     <script type="text/babel">
+     const Person = (props) => {
+       return <h1>Hello {props.name} click the button!</h1>;
+     }
+
+     const element = <Person name="Matt"/>;
+     ReactDOM.render(
+       element,
+       document.getElementById('root')
+     );
+     </script>
+
+     <script type="text/babel">
+       class Button extends React.Component {
+         constructor () {
+           super();
+           this.state = {
+             count: 0,
+           };
+         }
+         updateCount(){
+           this.setState((prevState, props) => {
+             return {count: prevState.count +1}
+           });
+         }
+         render() {
+           return (<button onClick={() => this.updateCount()}>
+         Click to increase; count'='{this.state.count}</button>);
+         }
+       }
+       ReactDOM.render(<Button />, document.getElementById('app'));
+     </script>
+</body>
+</html>
