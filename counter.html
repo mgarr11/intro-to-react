@@ -32,7 +32,7 @@
       render() {
         return (
           <div>
-          <img src="{this.props.image}" alt="Bloc Logo"/>
+          <img src={this.props.image} alt="Bloc Logo"/>
           <h2>Current program: {this.props.label}</h2>
           <h3>Current Week: {this.state.number}</h3>
             <button onClick={this.increment.bind(this)}>Increment</button>
